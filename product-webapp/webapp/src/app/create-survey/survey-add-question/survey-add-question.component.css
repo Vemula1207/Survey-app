@@ -1,0 +1,91 @@
+@import url(../../../../node_modules/bootstrap/dist/css/bootstrap.css);
+
+.spinner{
+    margin-top: 15%;
+}
+
+.no-question-card{
+    
+    margin-top: 15%;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.my-pagination /deep/ .ngx-pagination .current {
+    background: rgb(25, 197, 131);
+    margin-top: 10%;
+}
+
+#wrapper{
+    margin: 10px;
+    padding: 10px;
+    min-height: 400px;
+}
+
+.stepper-next{
+    float: right;
+    background-color: cadetblue;
+}
+
+.tab-wrapper{
+    margin: 5px;
+    border: 1px solid black;
+    
+}
+
+/* Styles for tab labels */
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: #080101;
+    color: cadetblue;
+    font-weight: 1000;
+}
+
+ .mat-ink-bar {
+    background-color:#efefef !important;
+}
+
+#no-question-selected-selector{
+    
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    min-height: 100px;
+    margin-top: 100px;
+    text-align: center;
+    padding-top: 40px;
+    font-size: large;
+    font-weight: 500;
+    background-color: #efefef;
+}
+
+.mat-step-icon.mat-step-icon-state-number{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.mat-step-icon.mat-step-icon-state-edit{
+    background-color: cadetblue;
+}
+
+.mat-step-icon.mat-step-icon-state-number.mat-step-icon-selected{
+    background-color: #080101;
+    color: white;
+}
+
+.mat-icon{
+    float: right;
+}

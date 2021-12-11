@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center" *ngIf="spinner ; else hidespinner">
+    <div class="spinner"> 
+        <mat-spinner></mat-spinner>
+    </div>
+
+</div>
+
+<ng-template #hidespinner>
+    <div class="container-fluid text-left my-2">
+        <h2>Question Group</h2>
+        <mat-divider class="divider"></mat-divider>
+    </div>
+    <div class="container text-center my-4 my-4" *ngIf="questionGroups.length < 1; else display">
+        <strong>NO questionGroup Found</strong>
+    </div>
+
+    <ng-template #display>
+        <div class="container-fluid my-4">
+            <div class="row">
+                <div class="col-sm-4" (click)="onselect(questionGroup)" *ngFor="let questionGroup of questionGroups">
+                    <div class="card my-4">
+                        <div class="card-body">
+                                <span  style="font-size: 1.2rem;"><strong>{{questionGroup.groupTitle}}</strong></span>
+                                <span class="createdon">Created On : {{formatDate(questionGroupscreatedOn)}}</span>
+                            <div class="my-2">
+                                <span *ngFor = "let tag of questionGroup.tags">
+                                    <span class="card tag badge text-dark mx-1">{{tag}}</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ng-template>
+</ng-template>
+
+<button id="ad">
+    <mat-icon (click)="createQuestionGroup()">add</mat-icon>
+</button>

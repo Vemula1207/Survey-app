@@ -1,0 +1,21 @@
+@import url(../../../node_modules/bootstrap/dist/css/bootstrap.css);
+
+.content-wrapper{
+    min-height: 400px;
+}
+
+.stepper-wrapper{
+    border: 1px solid #af9393 !important;
+    padding: 10px 30px 10px 10px;
+    min-height: 500px;
+}
+
+.stepper-next{
+    background-color: cadetblue;
+    float: right;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+    background-color: cadetblue;
+}
+

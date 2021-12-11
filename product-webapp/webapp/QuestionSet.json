@@ -1,0 +1,42 @@
+{
+  "questions": [
+      {
+          
+          "QuestionStatus": "FREE",
+          "questionGroup": "customer",
+          "questionBody": "How do you feel about us?",
+          "questionType": "MCQ",
+          "createdBy": "Mohit",
+          "options": [
+              "Very Good",
+              "Good",
+              "Normal",
+              "Bad"
+          ],
+          "tags": ["Health","Education"]
+      },
+      {
+         
+          "questionStatus": "FREE",
+          "questionGroup": "Sports",
+          "questionBody": "Which sports you play?",
+          "questionType": "MSQ",
+          "createdBy": "Mohit",
+         
+          "options": ["Cricket","Football","Hockey"],
+          "tags": ["Sports","Games"]
+      },
+      {
+        "questionStatus": "FREE",
+        "questionGroup": "Carrier",
+        "questionBody": "What is your aim in life?",
+        "questionType": "SUBJECTIVE",
+        "createdBy": "Mohit",
+       
+        "options": [],
+        "tags": ["Education"]
+      }
+
+
+  ]
+}

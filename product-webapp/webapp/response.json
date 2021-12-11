@@ -1,0 +1,94 @@
+{
+    "questions": [
+        {
+            "questionId": 1,
+            "status": "free",
+            "questionGroup": "customer",
+            "questionBody": "How do you feel about us",
+            "questionType": "mcq",
+            "createdBy": "Mohit",
+            "createdOn": "02/09/2021",
+            "options": [
+                "Very Good",
+                "Good",
+                "Normal",
+                "Bad",
+                "Very Bad"
+            ],
+            "tags": "Health",
+            "response":""
+        },
+        {
+            "questionId": 2,
+            "status": "free",
+            "questionGroup": "customer",
+            "questionBody": "How do you feel about us",
+            "questionType": "subjective",
+            "createdBy": "Mohit",
+            "createdOn": "02/09/2021",
+            "options": null,
+            "tags": "Health",
+            "response":""
+        },
+        {
+            "questionId": 3,
+            "status": "free",
+            "questionGroup": "customer",
+            "questionBody": "How do you feel about us",
+            "questionType": "checkbox",
+            "createdBy": "Mohit",
+            "createdOn": "02/09/2021",
+            "options": [
+                "Very Good",
+                "Good",
+                "Normal",
+                "Bad",
+                "Very Bad"
+            ],
+            "tags": "Health",
+            "response":""
+        },
+        {
+            "questionId": 4,
+            "status": "free",
+            "questionGroup": "customer",
+            "questionBody": "How do you feel about us",
+            "questionType": "subjective",
+            "createdBy": "Mohit",
+            "createdOn": "02/09/2021",
+            "options": null,
+            "tags": "Health",
+            "response":""
+        },
+        {
+            "questionId": 5,
+            "status": "free",
+            "questionGroup": "customer",
+            "questionBody": "How do you feel about us",
+            "questionType": "checkbox",
+            "createdBy": "Mohit",
+            "createdOn": "02/09/2021",
+            "options": [
+                "Very Good",
+                "Good",
+                "Normal",
+                "Bad",
+                "Very Bad"
+            ],
+            "tags": "Health",
+            "response":""
+        },
+        {
+            "questionId": 6,
+            "status": "free",
+            "questionGroup": "customer",
+            "questionBody": "How do you feel about us",
+            "questionType": "subjective",
+            "createdBy": "Mohit",
+            "createdOn": "02/09/2021",
+            "options": null,
+            "tags": "Health",
+            "response":""
+        }
+    ]
+}

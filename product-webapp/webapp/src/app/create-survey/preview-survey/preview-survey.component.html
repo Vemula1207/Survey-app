@@ -1,0 +1,56 @@
+
+<div style="height: 50px;" >
+    <button mat-raised-button class="primary-btn" (click)="createNewSurvey()" >Create Survey</button>
+</div>
+
+<div [style.font-family]="fontFamily" [style.font-size.px]="fontSize" [style.font-style]="fontStyle" class="container" style="max-height: 350px;overflow-y: scroll;">
+
+    <h2 style="text-align: center;">
+        {{newSurvey.surveyTitle}}
+    </h2>
+<!-- Hello -->
+    <div class="container">
+        <div *ngFor=" let question of newSurvey.questions ">
+
+            <mat-card>
+    
+                <mat-card-title> {{question.questionBody}} </mat-card-title>
+    
+                <mat-card-content>
+    
+                    <div class="options" *ngIf="question?.questionType === 'MCQ'">
+                        <div *ngFor="let option of question?.options">
+                            <mat-radio-button class="example-radio-button" disabled>
+                                {{option}}
+                            </mat-radio-button>
+                        </div>
+                    </div>
+    
+                    <div class="options" *ngIf="question?.questionType === 'CHECKBOX'">
+                        <div *ngFor="let option of question?.options">
+                            <mat-checkbox class="example-margin" [disabled]="true">
+                                {{option}}
+                            </mat-checkbox>
+                        </div>
+                    </div>
+    
+                    <div class="options d-block" *ngIf="question?.questionType === 'SUBJECTIVE'">
+    
+                        <input class="d-block" type="text" placeholder="Enter answer here">
+    
+                    </div>
+    
+                </mat-card-content>
+    
+            </mat-card>
+    
+        </div>
+    </div>
+
+
+    <!-- // -->
+
+</div>
+
+
+<button class="my-2" mat-raised-button matStepperPrevious >Back</button>

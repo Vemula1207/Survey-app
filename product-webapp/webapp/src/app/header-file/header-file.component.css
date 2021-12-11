@@ -1,0 +1,27 @@
+* {
+  background: cadetblue;
+  color: white;
+}
+.brand {
+  font-style: oblique;
+  font-size: 28px;
+}
+.navbar-brand {
+  font-size: 24px;
+}
+.nav-item a {
+  color: white;
+  text-decoration: none;
+
+  
+
+}
+.nav-item {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+a{
+  text-decoration: none;
+
+}

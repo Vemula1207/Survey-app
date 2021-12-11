@@ -1,0 +1,171 @@
+version: "3"
+services:
+  rabbitmq:
+    image: rabbitmq:3.7.5-management
+    container_name: rabbitmq
+    hostname: localhost
+    network_mode: "host"
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_VHOST:
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  neo4j:
+    image: neo4j:4.2.3
+    container_name: neo4j
+    restart: always
+    network_mode: "host"
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      NEO4J_AUTH: neo4j/password
+
+  prometheus:
+    container_name: prom
+    image: prom/prometheus
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+
+  grafana:
+    container_name: graf
+    image: grafana/grafana
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 3000:3000
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 27017:27017
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    environment:
+      - node.name=elasticsearch
+      - cluster.name=kidsjoyment
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - ./Data/elasticsearch:/usr/share/elasticsearch/data
+
+
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8761:8761
+
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+  user-service:
+    build: user-service/
+    container_name: user-service
+    depends_on:
+      - mongodb
+      - eureka-server
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 8020:8020
+  payment-service:
+    build: payment-service/
+    container_name: payment-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 9093:9093
+
+  email-service:
+    build: email-service/
+    container_name: email-service
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 8050:8050
+
+  surveyauthoring-service:
+    build: surveyauthoring-service/
+    container_name: surveyauthoring-service
+    depends_on:
+      - mongodb
+      - rabbitmq
+      - eureka-server
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 8090:8090
+
+  surveyengine-service:
+    build: surveyengine-service/
+    container_name: surveyengine-service
+    depends_on:
+      - elasticsearch
+      - eureka-server
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 8095:8095
+
+  matchmaking-service:
+    build: matchmaking-service/
+    container_name: matchmaking-service
+    depends_on:
+      - neo4j
+      - rabbitmq
+      - eureka-server
+    restart: always
+    network_mode: 'host'
+    hostname: localhost
+    ports:
+      - 8085:8085
+
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "4200:4200"

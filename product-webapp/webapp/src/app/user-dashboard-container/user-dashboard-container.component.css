@@ -1,0 +1,28 @@
+.content {
+  background-color: rgb(173, 173, 173);
+  min-height: 100%;
+}
+.content {
+  margin-bottom: 20px;
+  justify-content: center;
+  background-image: url("../../assets/images/wbg1.jpg");
+  background-size: 100%;
+  background-size: cover;
+}
+* {
+  background: cadetblue;
+  color: white;
+}
+.brand {
+  font-style: oblique;
+}
+.navbar-brand {
+  font-size: 24px;
+}
+.nav-item a {
+  color: white;
+}
+.nav-item {
+  margin-left: 50px;
+  margin-right: 50px;
+}

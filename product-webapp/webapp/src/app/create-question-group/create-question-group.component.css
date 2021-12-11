@@ -1,0 +1,16 @@
+.tag-list {
+    width: 100%;
+  }
+  .dialog-box{
+      width: 500px;
+  }
+  .mat-dialog-actions {
+    justify-content: flex-end;
+}
+
+.inp {
+  width: 500px;
+}
+#create{
+  background-color: cadetblue;
+}

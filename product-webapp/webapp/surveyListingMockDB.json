@@ -1,0 +1,124 @@
+{
+    "surveyList": [
+        {
+            "surveyTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Active",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 4,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Dormant",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 5,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Active",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 20,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Dormant",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 21,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Active",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 22,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Active",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 23,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Active",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 24,
+            "surveyLink": "https://www.google.com"
+        },
+        {
+            "surveyTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01",
+            "surveyStatus": "Dormant",
+            "activeTime": 120,
+            "description": "Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.Survey Research is defined as the process of conducting research using surveys that researchers send to survey respondents.",
+            "targetAudience":"Public",
+            "activeSurveyId": 25,
+            "surveyLink": "https://www.google.com"
+        }
+    ]
+}

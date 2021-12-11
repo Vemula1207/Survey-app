@@ -1,0 +1,26 @@
+.filledSurvey button {
+  background-color: rgb(97, 90, 90);
+  margin-top: 8px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+}
+
+/* .filledSurvey .mat-icon{
+  font-size: 32px;
+  margin-top: 5px;
+} */
+.filledSurvey .mat-tooltip{
+  font-size: 100px !important;
+}
+.filledSurvey h4{
+  text-align: justify;
+}
+/* .filledSurvey{
+  min-height: 230px;
+} */
+/* .footer{
+  bottom: 0;
+  position: absolute;
+  background-color: yellow;
+} */

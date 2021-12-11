@@ -1,0 +1,56 @@
+<div id="header">
+    <h1>Responses</h1>
+</div>
+
+<hr>
+
+<div *ngIf="responses.length==0">
+    <h2 style="text-align: center;"></h2>
+</div>
+
+<div class="container" id="analysis" *ngFor="let question of filteredArray">
+    <div class="row">
+        <div class="col" *ngIf="question.options.length!=0">
+            <h1 id="title"><b>{{surveyTitle}}</b></h1>
+
+            <h2 id="questionBody" style="font-size: 25px; margin-bottom: 35px;">Q. {{question.questionBody}}</h2>
+            <div style="font-size: 17px; margin-bottom: 7px;">Total Response <b> {{totalResponse}}</b></div>
+            <div style="font-size: 17px; margin-bottom: 7px;"> Answered <b>{{question.answered}}</b> </div>
+            <div style="font-size: 17px;">Skipped <b> {{totalResponse-question.answered}}</b></div>
+        </div>
+        <div class="col">
+            <div *ngIf="question.options.length!=0">
+                <div>
+                    <canvas class="pie-chart" baseChart [data]=question.data [plugins]="pieChartPlugins"
+                        [options]="pieChartOptions" [labels]=question.label chartType='pie' [colors]="pieChartColors">
+                    </canvas>
+                </div>
+            </div>
+            <div id="msg" *ngIf="question.options.length==0">
+                <div>
+                    <h1 id="title" style="margin-bottom: 70px;"><b>{{surveyTitle}}</b></h1>
+                   <h2 style="display: inline;margin-top: 70px; font-size: 25px;" id="questionBodySub"> Q.{{question.questionBody}}</h2>
+                   <div style="display: inline;float: right;margin-right: 10%;font-size: 20px;">
+                    Answered <b>{{question.answered}}</b> &nbsp;&nbsp;
+                        Skipped <b> {{totalResponse-question.answered}}</b></div>
+                   
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <div id="body" *ngIf="question.options.length==0">
+        <h1 style="text-align: center; margin-top: 40px;">This a Subjective Question ,so Chart is not available</h1>
+    </div>
+
+
+
+
+
+
+</div>
+<hr *ngIf="responses.length!=0">
+<mat-paginator *ngIf="responses.length!=0" [length]="questionList.length" [pageSize]="defaultRecords"
+    (page)="onPageChange($event)">hi
+</mat-paginator>

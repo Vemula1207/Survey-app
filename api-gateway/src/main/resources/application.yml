@@ -1,0 +1,105 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+#jwt :
+#  secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
+server:
+  port: 8080
+ribbon:
+  ReadTimeout: 60000
+#spring:
+#  cloud:
+#    gateway:
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods:
+#              - GET
+#              - POST
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user-service/**
+          filters:
+            - RewritePath=/user-service(?<segment>/?.*), $\{segment}
+        - id: payment-service
+            uri: lb://payment-service
+            predicates:
+              - Path=/payment-service/**
+            filters:
+              - RewritePath=/payment-service(?<segment>/?.*), $\{segment}
+
+
+        - id: surveyauthoring-service
+          uri: lb://surveyauthoring-service
+          predicates:
+            - Path=/surveyauthoring-service/**
+          filters:
+            - RewritePath=/surveyauthoring-service(?<segment>/?.*), $\{segment}
+
+        - id: surveyengine-service
+          uri: lb://surveyengine-service
+          predicates:
+            - Path=/surveyengine-service/**
+          filters:
+            - RewritePath=/surveyengine-service(?<segment>/?.*), $\{segment}
+
+        - id: matchmaking-service
+          uri: lb://matchmaking-service
+          predicates:
+            - Path=/matchmaking-service/**
+          filters:
+            - RewritePath=/matchmaking-service(?<segment>/?.*), $\{segment}
+
+
+        - id: email-service
+          uri: lb://email-service
+          predicates:
+            - Path=/email-service/**
+          filters:
+            - RewritePath=/email-service(?<segment>/?.*), $\{segment}
+
+        - id: product-webapp
+          uri: lb://product-webapp
+          predicates:
+            - Path=/**
+          filters:
+            - RewritePath=(?<segment>/?.*), $\{segment}
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+

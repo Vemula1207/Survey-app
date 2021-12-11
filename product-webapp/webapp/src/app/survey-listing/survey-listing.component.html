@@ -1,0 +1,36 @@
+<!-- <mat-toolbar color="primary">
+  <span>Survey Listing Demo</span>
+</mat-toolbar> -->
+
+
+
+<!-- <div class="content">
+    <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px grid">
+      <div fxFlex="280px" class="specs" *ngFor="let survey of surveys">
+        <mat-card class="filledSurvey">
+            <mat-card-header fxLayoutAlign="center center">
+              <mat-card-title >{{survey.surveyTitle}}</mat-card-title>
+            </mat-card-header>
+            <mat-card style="background-color: teal; background-size: cover;">
+                <h3>Description: {{survey.description}}</h3>
+                <h3>Created-on: {{survey.createdOn}}</h3>
+                <ul *ngFor="let tag of survey.tags" style="display: inline-block; color: white; list-style: none; padding-left: 0;margin-bottom: 0;">
+                  <li style="background-color: green; margin-right: 8px; padding: 5px;"><h3>{{tag}}</h3></li>
+                </ul>
+                <h3>Responses: {{survey.Responses}}</h3>
+            </mat-card>
+            <mat-card-actions style="text-align: center;" *ngIf>
+              <mat-slide-toggle [(ngModel)]="myModel" color="primary">{{myModel?'Active':'Dormant'}}</mat-slide-toggle>
+            </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+</div> -->
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px grid">
+    <div fxFlex="290px" class="specs" *ngFor="let survey of surveys">
+      <app-survey-card [survey]="survey"></app-survey-card>
+    </div>
+  </div>
+</div>

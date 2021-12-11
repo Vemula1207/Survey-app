@@ -1,0 +1,90 @@
+
+
+<div class="container">
+
+    <mat-horizontal-stepper linear >
+
+        <mat-step [editable]="true">
+    
+            <div class="stepper-wrapper">
+    
+                <ng-template matStepLabel>Fill the basic details of Survey</ng-template>
+    
+                <div class="content-wrapper">
+                    <app-survey-basic-details (basicDetailsOfSurvey)="setSurveyBasicDetailsFormGroup($event)"></app-survey-basic-details>
+                </div>
+               
+                
+                
+            </div>
+            
+    
+        </mat-step>
+    
+        <mat-step [editable]="true">
+    
+            <div class="stepper-wrapper">
+    
+                <ng-template matStepLabel>Add questions to Survey</ng-template>
+
+                <div class="content-wrapper">
+    
+                    <app-survey-add-question [surveyTags]="surveyBasicDetailsFormGroup.value.tags" (emitQuestionsArray)="setQuestionsOfSurvey($event)"></app-survey-add-question>
+
+                </div>
+    
+                
+    
+            </div>
+            
+        </mat-step>
+
+        <mat-step [editable]="true">
+    
+            <div class="stepper-wrapper">
+    
+                <ng-template matStepLabel>Add Additional Information of Survey</ng-template>
+
+                <div class="content-wrapper">
+    
+                    <app-survey-additional-info [surveyBasicDetailsFormGroup]="this.surveyBasicDetailsFormGroup" 
+                            [questionsOfSurvey]="questionsOfSurvey" 
+                            (emitSurvey)="setNewSurveyProperties($event)"
+                            (emitFontFamily)="setFontFamily($event)"
+                            (emitFontSize)="setFontSize($event)"
+                            (emitFontStyle)="setFontStyle($event)" >
+                    </app-survey-additional-info>
+
+                </div>
+    
+                
+    
+            </div>
+            
+        </mat-step>
+    
+        <mat-step>
+
+            <div class="stepper-wrapper">
+    
+                <ng-template matStepLabel>Preview</ng-template>
+
+                
+    
+                <app-preview-survey 
+                    [fontFamily]="fontFamily" 
+                    [fontSize]="fontSize" 
+                    [fontStyle]="fontStyle" 
+                    [newSurvey]="newSurvey" >
+                </app-preview-survey>
+
+            </div>  
+            
+        </mat-step>
+    
+    </mat-horizontal-stepper>        
+
+
+</div>
+
+

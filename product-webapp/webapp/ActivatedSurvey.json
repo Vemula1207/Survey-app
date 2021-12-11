@@ -1,0 +1,64 @@
+{
+    "surveyData": {
+        "surveyTitle": "Hero1",
+        "description": "kuchnhi",
+        "createdBy": "mohit",
+        "status": "Active",
+        "activeTime": 124,
+        "question": [
+            {
+                "questionId": 1,
+                "status": "free",
+                "questionGroup": "customer",
+                "questionBody": "What you feel about us ?",
+                "questionType": "MCQ",
+                "createdBy": "Mohit",
+                "createdOn": "02/09/2021",
+                "options": [
+                    "Very Good",
+                    "Good",
+                    "Normal",
+                    "Bad",
+                    "Very Bad"
+                ],
+                "tags": "Health"
+            },
+            {
+                "questionId": 2,
+                "status": "free",
+                "questionGroup": "customer",
+                "questionBody": "How do you feel about us",
+                "questionType": "SUBJECTIVE",
+                "createdBy": "Mohit",
+                "createdOn": "02/09/2021",
+                "options": null,
+                "tags": "Health"
+            },
+            {
+                "questionId": 3,
+                "status": "free",
+                "questionGroup": "customer",
+                "questionBody": "How do you feel about us",
+                "questionType": "CHECKBOX",
+                "createdBy": "Mohit",
+                "createdOn": "02/09/2021",
+                "options": [
+                    "Very Good",
+                    "Good",
+                    "Normal",
+                    "Bad",
+                    "Very Bad"
+                ],
+                "tags": "Health"
+            }
+        ],
+        "uiSettings": {
+            "fontStyle":"normal",
+            "fontSize":12,
+            "fontFamily":"Times New Roman"
+        },
+        "activatedOn": 123,
+        "surveyLink": "",
+        "targetAudience": ""
+    }
+}

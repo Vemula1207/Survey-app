@@ -1,0 +1,15 @@
+.wrapper {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30px;
+}
+
+.input-full-width{
+    width: 100%;
+}
+
+.stepper-next{
+    background-color: cadetblue;
+    float: right;
+}

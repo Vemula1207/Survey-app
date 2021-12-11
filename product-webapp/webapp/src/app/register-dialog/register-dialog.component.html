@@ -1,0 +1,17 @@
+<h1 style="text-align: center;">Register for Assessor</h1>
+
+<mat-form-field appearance="outline" hideRequiredMarker>
+    <mat-label>Name</mat-label>
+    <input [(ngModel)]="name" matInput required>
+
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline" hideRequiredMarker>
+    <mat-label>Email</mat-label>
+    <input type="email" [(ngModel)]="email" matInput required>
+
+  </mat-form-field>
+
+  <br>
+  <mat-dialog-actions mat-dialog-close align="end"><button mat-raised-button (click)="proceed()">Proceed to pay</button></mat-dialog-actions>
+  

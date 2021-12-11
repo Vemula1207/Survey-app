@@ -1,0 +1,25 @@
+.email-list {
+    width: 100%;
+  }
+  .dialog-box{
+      width: 500px;
+  }
+  .mat-dialog-actions {
+    justify-content: flex-end;
+
+}
+
+/* .mat-dialog-content.mat-typography{
+ height: 231.98px;
+} */
+.inp {
+  width: 500px;
+}
+#share{
+  background-color:cadetblue;
+  color: white;
+}
+.inp input
+{
+  color: blue;
+}

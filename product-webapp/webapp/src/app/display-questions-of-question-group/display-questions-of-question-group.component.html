@@ -1,0 +1,77 @@
+<div class="container d-flex justify-content-center" *ngIf="spinner ; else hidespinner">
+    <div class="spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+
+</div>
+
+
+<ng-template #hidespinner>
+    <div class="container-fluid text-left my-2">
+        <h2>{{groupName}} Questions</h2>
+        <mat-divider class="divider"></mat-divider>
+    </div>
+
+    <div class="container text-center my-4 my-4" *ngIf="questions.length < 1; else display">
+        <strong>NO questions Found</strong>
+    </div>
+
+
+    <ng-template #display>
+
+        <div class="container">
+
+            <mat-accordion>
+                <mat-expansion-panel class=" my-4" *ngFor="let question of questions | paginate: { itemsPerPage: 10, currentPage: page,totalItems:totalLength}">
+                    <mat-expansion-panel-header>
+                        <span fxFlex="5">
+                            <span class="options" *ngIf="question.questionType==='SUBJECTIVE'">SUB</span>
+                            <span class="options" *ngIf="question.questionType==='MCQ'">MCQ</span>
+                            <span class="options" *ngIf="question.questionType==='MSQ'">MSQ</span>
+                        </span>
+                        <span fxFlex="70">
+                            {{question.questionBody}}
+                        </span>
+
+                        <span fxFlex ="20">Created On : {{formatDate(questionGroupscreatedOn)}}</span>
+                       <!-- <mat-panel-title fxFlex="50">
+                            
+                        </mat-panel-title>
+
+                        <mat-panel-description>
+                            
+                        </mat-panel-description> -->
+
+                        <mat-icon class="edit" (click)="editQuestion(question)">edit</mat-icon>
+                    </mat-expansion-panel-header>
+
+
+
+                    <div class="options" *ngIf="question.questionType === 'MCQ'">
+                        <div *ngFor="let option of question.options">
+                            <mat-radio-button class="example-radio-button" disabled>
+                                {{option}}
+                            </mat-radio-button>
+                        </div>
+                    </div>
+
+                    <div class="options" *ngIf="question.questionType === 'MSQ'">
+                        <div *ngFor="let option of question.options">
+                            <mat-checkbox class="example-margin" [disabled]="true">
+                                {{option}}
+                            </mat-checkbox>
+                        </div>
+                    </div>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+            <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+        </div>
+
+    </ng-template>
+
+</ng-template>
+
+<button id="ad">
+    <mat-icon (click)="openQuestionDialog()">add</mat-icon>
+</button>

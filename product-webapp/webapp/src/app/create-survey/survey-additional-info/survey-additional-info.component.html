@@ -1,0 +1,59 @@
+<div class="wrapper">
+
+    <form [formGroup]="additionalInformationOfSurveyFormGroup">
+
+        <div class="form-group">    
+
+            <mat-form-field appearance="outline" class="input-full-width">
+                <mat-label>Target Audience</mat-label>
+                <input formControlName="targetAudience" matInput required>
+            </mat-form-field><br />
+        
+        </div>
+
+        <div class="form-group">
+
+            <mat-form-field appearance="outline"  class="input-full-width">
+                <mat-label>Font Size</mat-label>
+                <mat-select formControlName="fontSize" matInput required>
+                    <mat-option *ngFor="let size of fontSize" value={{size}}>
+                        {{size}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field><br />
+
+        </div>
+
+        <div class="form-group" >
+
+            <mat-form-field appearance="outline" class="input-full-width">
+                <mat-label>Font Family</mat-label>
+                <mat-select formControlName="fontFamily" matInput required>
+                    <mat-option *ngFor="let family of fontFamily" value={{family}}>
+                        {{family}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field><br />
+
+        </div>
+
+        <div class="form-group" >
+
+            <mat-form-field appearance="outline" class="input-full-width">
+                <mat-label>Font Style</mat-label>
+                <mat-select formControlName="fontStyle" matInput required>
+                    <mat-option *ngFor="let style of fontStyles" value={{style}}>
+                        {{style}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field><br/>
+
+        </div>
+
+        <div >
+            <button mat-raised-button matStepperPrevious >Back</button>
+            <button mat-raised-button matStepperNext class="stepper-next" (click)="setNewSurveyProperties()">Next</button>
+        </div>
+
+    </form>
+</div>

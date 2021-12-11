@@ -1,0 +1,39 @@
+<div class="dialog-box">
+    
+    <h3 style="text-align: center;">Share the survey </h3>
+    <mat-dialog-content  class="mat-typography">
+    
+        <mat-form-field appearance="outline" class="inp">
+          <mat-label>Message</mat-label>
+          <input [(ngModel)]="message" matInput placeholder="Enter message.." >
+        </mat-form-field>
+    
+        <mat-form-field class="email-list" appearance="outline">
+            <mat-label>Add peoples</mat-label>
+            <mat-chip-list #chipList aria-label="Email selection">
+              <mat-chip *ngFor="let email of emails" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(email)">
+                {{email}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input type="email" placeholder="Enter emails..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="inp">
+            <mat-label>Survey link</mat-label>
+            <input [(ngModel)]="link" [disabled]="true" matInput >
+          </mat-form-field>
+    
+    </mat-dialog-content>
+    
+    
+    <mat-dialog-actions align="end" >
+        <button mat-raised-button mat-dialog-close>CANCEL</button>
+        <button mat-raised-button mat-dialog-close id="share" (click)="OnShare()" cdkFocusInitial>SHARE</button> 
+    </mat-dialog-actions>
+    </div>
+    <!-- (click)="onPost()" -->

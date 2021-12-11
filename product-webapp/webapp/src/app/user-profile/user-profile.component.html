@@ -1,0 +1,73 @@
+
+
+<div class="back">
+  <br> <br> <br> 
+<div class="container"  > 
+  <div fxFlex="30" style="background-color:grey;text-align: center;width:100%;">
+    <br><br>
+   <span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size:28px;"> Edit Your Profile</span> 
+    <br> <br>
+    <img class="rounded-circle mt-5" src="../../assets/images/person-icon.png" width="90">
+    <br> <br>
+    <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 18px;">{{us.name}}</span>
+    <br>
+    <span><i>{{us.email}}</i></span>
+    <br>
+    <span><b>{{us.userRole}}</b></span>
+    <br> <br> <br> <br> <br> <br> <br>
+      <button class="btn btn-primary buttons" (click)="adddetails()">Save Changes</button>
+      <br> <br>
+      <button class="btn btn-primary buttons" (click)="gotologin()">Create New Account</button>
+   </div>
+  
+
+ 
+   <div fxFlex="70" style="background-color:white;text-align: center;width:100%;">
+    <br> <br>
+     <span style="font-family: cursive;font-size: 24px;font-weight: bolder;color:cadetblue">Please fill out</span> 
+     <br> <br>
+    <mat-form-field appearance="fill" class="inp">
+      <mat-label style="font-weight: bold;">Age:</mat-label>
+      <input type="number" [(ngModel)]="us.age" matInput required>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="fill" class="inp">
+      <mat-label style="font-weight: bold;" >Education</mat-label>
+      <input [(ngModel)]="us.edu" matInput placeholder="Highest degree" required>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="fill" class="inp">
+      <mat-label style="font-weight: bold;">Occupation:</mat-label>
+      <input [(ngModel)]="us.occupation" matInput  required>
+    </mat-form-field>
+
+    <br> <br> <br>
+
+
+       
+           
+         <mat-form-field class="tag-list" appearance="fill">
+          <mat-label style="font-weight: bold; font-size: medium;">Interests</mat-label>
+          <br>
+          <mat-chip-list #chipList aria-label="Tag selection">
+            <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                     [removable]="removable" (removed)="remove(tag)">
+              {{tag.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Add tags..."
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)" required>
+          </mat-chip-list>
+        </mat-form-field>
+          
+          
+        </div>
+          </div>
+        </div>
+
+
+
+

@@ -1,0 +1,26 @@
+*{
+    background-color: rgb(207 205 205)
+}
+.mycard{
+    background: white;
+    border-top: solid 6px cadetblue;
+}
+
+.crd{
+    padding: auto;
+    background: white;
+    border-left: solid 6px cadetblue;
+}
+.title{
+    background: white;
+}
+.options{
+    font-size: 1rem;
+}
+.button{
+    background: cadetblue;
+    color: white;
+    font-style: bold;
+    font-size: larger;
+    margin-bottom: 16px ;
+}

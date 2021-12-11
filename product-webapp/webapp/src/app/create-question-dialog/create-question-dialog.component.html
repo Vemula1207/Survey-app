@@ -1,0 +1,92 @@
+<div id="heading" *ngIf="notSaved">
+  <h2 *ngIf="forEdit==false" style="text-align: center;">Create New Question</h2>
+  <h2 *ngIf="forEdit" style="text-align: center;">Edit Question</h2>
+  <mat-dialog-actions *ngIf="notSaved" align="end" id="clearButton">
+    <button mat-mini-fab color="basic" mat-dialog-close mat-button matTooltip="Close" matTooltipPosition="before">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</div>
+
+
+
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="notSaved">
+    <table>
+      <tr>
+        <td>
+          <mat-form-field appearance="outline" hideRequiredMarker>
+            <mat-label>Question</mat-label>
+            <input [(ngModel)]="questionBody" matInput required>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field id="type" appearance="outline" hideRequiredMarker>
+            <mat-label>Question Type</mat-label>
+            <mat-select [(ngModel)]="questionType" required>
+              <mat-option value="MCQ"> MCQ </mat-option>
+              <mat-option value="MSQ">MSQ</mat-option>
+              <mat-option value="SUBJECTIVE">Subjective</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <mat-form-field class="tag-list" appearance="outline">
+      <mat-label>Add tags</mat-label>
+      <mat-chip-list #chipList aria-label="Tag selection">
+        <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable" (removed)="remove(tag)">
+          {{tag}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Enter tag name..." [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)" required>
+      </mat-chip-list>
+    </mat-form-field>
+
+
+
+    <div *ngIf="questionType=='MCQ' || questionType=='MSQ' ">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Option</mat-label>
+        <input [(ngModel)]="option" placeholder="Write Option" matInput>
+      </mat-form-field>
+      <button id="addButton" color="basic" mat-fab (click)="addOption()" mat-button matTooltip="Add" matTooltipPosition="after">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+      <tr *ngFor="let option of options;let i=index" id="optionRow">
+        <td *ngIf="questionType=='MCQ'">
+          <mat-radio-button disabled></mat-radio-button>
+        </td>
+        <td *ngIf="questionType=='MSQ'">
+          <mat-checkbox id="checkbox" disabled></mat-checkbox>
+        </td>
+        <td id="addedOption">
+          <h2>{{option}}</h2>
+        </td>
+        <td>
+          <button id="deleteButton" (click)="onDelete(i)" color="basic" mat-mini-fab mat-button matTooltip="Delete" matTooltipPosition="after">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </td>
+      </tr>
+
+    </div>
+  </div>
+  <div *ngIf="notSaved==false" id="status">
+    <h1 *ngIf="forEdit==false" style="text-align: center;margin-top: 200px;color:cadetblue;">
+      <mat-icon>check_circle_outline</mat-icon> Question Created Successfully
+    </h1>
+    <h1 *ngIf="forEdit" style="text-align: center;margin-top: 200px;color:cadetblue;">
+      <mat-icon>check_circle_outline</mat-icon> Question Edited Successfully
+    </h1>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions *ngIf="notSaved" align="end">
+  <button id="save" *ngIf="forEdit==false" mat-raised-button (click)="onSave()">Create</button>
+  <button id="editButton" *ngIf="forEdit" mat-raised-button (click)="editQuestion()">Edit</button>
+</mat-dialog-actions>

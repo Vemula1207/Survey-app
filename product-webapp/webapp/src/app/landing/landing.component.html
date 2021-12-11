@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <mat-toolbar class="header">
+      <h1 style="font-size: 30px; color: white"><img  width="53px" height="53px" class="responsive-img" src="../../assets/images/logo2.jpg">SurveyGuru</h1>
+      <span class="example-spacer"></span>
+      <!-- <button mat-button style="margin-right: 5px;" >Sign in</button>
+         <button mat-button id="btn">Sign up</button> -->
+         <button class="btn btn-outline-success text-light" (click)="register()">
+          Register
+        </button>
+      <button class="btn btn-outline-success text-light" (click)="btnClick()">
+        Sign in
+      </button>
+    </mat-toolbar>
+
+    <div>
+      <div class="sect">
+        <div class="section content">
+          <span id="start">Worried</span><br />
+          <p style="margin-bottom: 0;">about gathering data and driving your decisions ? </p>
+          <p>
+            SurveyGuru provides you tools for designing your survey, sharing
+            your survey online, and reviewing your survey results.
+          </p>
+          <button
+            mat-raised-button
+            (click)="btnClick()"
+          >
+            Create Survey
+          </button>
+        </div>
+        <div class="image">
+          <img src="../../assets/images/review.jpg" height="500px" />
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="sect">
+        <div class="image2">
+          <img src="../../assets/images/cari1.jpg" height="400px" />
+        </div>
+        <div class="clear"></div>
+        <div class="section content2">
+          <p>Do you want to</p>
+          <h3 id="takeSurvey">Share your opinion</h3>
+          <p>
+            and help people solve their problem. They might pay for your opinions too. Take a survey and checkout.
+          </p>
+          <button
+            mat-raised-button
+            (click)="btnClick()"
+          >
+            Take Survey
+          </button>
+        </div>
+        
+      </div>
+
+      <div class="test2">
+        <div class="section section2">
+          All SurveyGuru users get unlimited surveys, unlimited questions per
+          survey, & unlimited survey responses. SurveyGuru Premium users enjoy
+          additional tools that are wonderful and fantastic.
+        </div>
+      </div>
+      <div class="head2">Why choose us?</div>
+
+      <div class="row cards">
+        <div class="col-sm-4">
+          <!-- <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Custom templates</h4>
+                 <p class="card-text">Free  users can choose between many survey templates available for free. Premium users can select much attractive and wonderful templates available on the platform.</p>
+               </div>
+             </div> -->
+
+          <mat-card class="example-card">
+            <mat-card-header fxLayoutAlign="center">
+              <mat-card-title fxLayoutAlign="center" style="text-align: center;">Custom templates</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                Free users can choose between many survey templates available
+                for free. Premium users can select much attractive and wonderful
+                templates available on the platform.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-sm-4">
+          <!-- <div class="card">
+               <div class="card-body">
+                 <h4 class="card-title">Convenient Data Gathering</h4>
+                 <p class="card-text">We gather data in very convenient way. Data is collected from a sample of respondents that took a survey. This data is comprehensive information gathered from a target audience about a specific topic to conduct research.  </p>
+               </div>
+             </div> -->
+          <mat-card class="example-card">
+            <mat-card-header fxLayoutAlign="center">
+              <mat-card-title fxLayoutAlign="center" style="text-align: center;">Convenient Data Gathering</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                We gather data in very convenient way. Data is collected from a
+                sample of respondents that took a survey. This data is
+                comprehensive information gathered from a target audience about
+                a specific topic to conduct research.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-sm-4">
+          <!-- <div class="card">
+                 <div class="card-body">
+                   <h4 class="card-title">Precise Results</h4>
+                   <p class="card-text">On SurveyGuru platform all results provided are accurate and precise. We've got a fantastic user base and genuine survey takers.
+                   </p>
+                 </div>
+               </div> -->
+          <mat-card class="example-card">
+            <mat-card-header fxLayoutAlign="center">
+              <mat-card-title fxLayoutAlign="center" style="text-align: center;">Precise Results</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                On SurveyGuru platform all results provided are accurate and
+                precise. We've got a fantastic user base and genuine survey
+                takers.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!-- Section: Form -->
+          <section class="">
+            <form action="">
+              <!--Grid row-->
+              <div class="row d-flex justify-content-center">
+                <!--Grid column-->
+                <div class="col-auto">
+                  <p class="pt-2">
+                    <strong>Sign up for SurveyGuru</strong>
+                  </p>
+                </div>
+
+                <!--Grid column-->
+                <div class="col-auto">
+                  <!-- Submit button -->
+                  <button
+                    type="submit"
+                    class="btn btn-outline-light mb-4"
+                    (click)="btnClick()"
+                  >
+                    Sign up
+                  </button>
+                </div>
+                <!--Grid column-->
+              </div>
+              <!--Grid row-->
+            </form>
+          </section>
+          <!-- Section: Form -->
+
+          <!-- Section: Text -->
+          <section class="mb-4">
+            <p>
+              Thousands of people put their trust in SurveyGuru every day. Sign
+              up now in SurveyGuru and enjoy it's fast and easy features.
+            </p>
+          </section>
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2021 Copyright: SurveyGuru
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px grid">
+      <div fxFlex="290px" class="specs" *ngFor="let survey of surveys">
+        <app-active-survey-card [survey]="survey"></app-active-survey-card>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,18 @@
+.html {
+  color: #fff;
+}
+.content {
+  padding: 16px;
+  background-image: url("../../assets/images/wbg1.jpg");
+  background-size: 100%;
+  background-size: cover;
+  color: #fff;
+  min-height: 100%;
+  height: max-content;
+}
+/* .content > mat-card {
+  width: 200px;
+} */
+.specs {
+  background-size: cover;
+}

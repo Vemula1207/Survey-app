@@ -1,0 +1,104 @@
+<app-header-file></app-header-file>
+<mat-sidenav-container>
+    <mat-sidenav *ngIf="opened==true" mode="side" [(opened)]="opened">
+     <mat-nav-list>
+         <mat-list-item (click)="homes()">
+            <mat-icon matListIcon>home</mat-icon>
+            <p matLine><span >Home</span></p>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item>
+            <mat-icon matListIcon>account_circle</mat-icon>
+            <p matLine>Profile</p>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item (click)="displayQuestionGroups()">
+            <mat-icon matListIcon>collections_bookmark</mat-icon>
+            <p matLine><span >Question Groups</span></p>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item (click)="createSurveys()">
+            <mat-icon matListIcon>border_color</mat-icon>
+            <p matLine><span >Create Survey</span></p>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item (click)="displayActiveSurveys()">
+            <mat-icon matListIcon>share</mat-icon>
+            <p matLine><span >Share</span></p>
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item (click)="opened=!opened" id="collapse">
+            <mat-icon matListIcon>arrow_back_ios</mat-icon>
+            <p matLine> <span>Collapse</span></p>    
+         </mat-list-item>
+         <mat-divider></mat-divider>
+
+         <!-- <mat-menu #menu="matMenu" xPostion="after" yPosition="below">
+            <button mat-menu-item>
+              
+              <span><b>Phone</b></span>
+            </button>
+            <button mat-menu-item >
+                <span><b>Email</b></span>
+            </button>
+           
+          </mat-menu> -->
+         
+
+
+     </mat-nav-list>
+
+
+    </mat-sidenav >
+   
+    <mat-sidenav *ngIf="opened==false" opened mode="side">
+        <mat-list-item>
+        <button *ngIf="opened==false" mat-button (click)="opened=!opened" mat-button matTooltip="Expand" matTooltipPosition="after"><mat-icon><mat-icon>view_list</mat-icon></mat-icon></button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+        <mat-list-item (click)="homes()">
+            <button mat-button matTooltip="Home" matTooltipPosition="after"
+            ><mat-icon matListIcon>home</mat-icon></button>
+         
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item>
+            <button mat-button mat-button matTooltip="Profile" matTooltipPosition="after"> <mat-icon matListIcon>account_circle</mat-icon></button>
+           
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item  (click)="displayQuestionGroups()"> 
+            <button mat-button mat-button matTooltip="Question Groups" matTooltipPosition="after"> <mat-icon matListIcon>collections_bookmark</mat-icon></button>
+            
+         </mat-list-item>
+         <mat-divider></mat-divider>
+         <mat-list-item (click)="createSurveys()">
+            <button mat-button mat-button matTooltip="Create Survey" matTooltipPosition="after"><mat-icon matListIcon>border_color</mat-icon></button>
+          
+         </mat-list-item>
+
+         <mat-divider></mat-divider>
+         <mat-list-item (click)="displayActiveSurveys()">
+            <button mat-button mat-button matTooltip="Share" matTooltipPosition="after"><mat-icon matListIcon>share</mat-icon></button>
+          
+         </mat-list-item>
+         <mat-divider></mat-divider>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+       <!-- <div id="main">
+         <div *ngIf = "home">
+                <app-home></app-home>
+           </div> 
+
+           <div *ngIf = "displayQuestion">
+                  <app-display-question-groups></app-display-question-groups>
+          </div> 
+
+           <div *ngIf = "createSurvey">
+                  <app-create-survey></app-create-survey>
+         </div>  -->
+      <!-- </div> -->
+      <router-outlet></router-outlet>
+   </mat-sidenav-content>
+</mat-sidenav-container>

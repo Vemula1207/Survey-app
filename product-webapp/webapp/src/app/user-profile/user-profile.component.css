@@ -1,0 +1,45 @@
+
+.container {
+    width: 1000px;
+    height: 720px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: auto;
+    margin-bottom: auto;
+   }
+.back
+{
+    height: 100%;
+    background-image: url("../../assets/images/wbg1.jpg");
+    background-size: 100%;
+    background-size: cover;
+}
+.container:hover
+{
+    box-shadow:slategray;
+}
+
+  .buttons {
+    background: cadetblue;
+    color:white;
+    box-shadow: none;
+    border: none
+}
+
+.buttons:hover {
+    background: rgb(2, 61, 63)
+}
+
+
+
+.buttons:active
+{
+    background: blue;
+}
+
+.form-group
+{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}

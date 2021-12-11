@@ -1,0 +1,78 @@
+<div class = "container" id = "wrapper" >
+  
+  <form  [formGroup] ="surveyBasicDetailsForm">
+
+    <!-- Survey name -->
+    <div class="my-1" *ngIf="!isNameValid">
+      <mat-hint>
+        Please enter a valid name for survey
+      </mat-hint>
+    </div>
+    <div class = "form-group"> 
+      <mat-form-field appearance="outline" class="input-full-width">
+        <mat-label>Survey Title</mat-label>
+        <input id="title" formControlName="surveyName" placeholder="Enter Survey Name..." (change)="validateForm()" matInput required>
+      </mat-form-field>
+    </div>
+    
+    
+
+    <!-- Description -->
+    <div class="my-1" *ngIf="!isDescriptionValid">
+      <mat-hint>
+        Description should be of 15-30 in length.
+      </mat-hint>
+    </div>
+    <div class = "form-group">
+      <mat-form-field appearance="outline" class="input-full-width">
+        <mat-label>Description</mat-label>
+        <textarea id="description" formControlName="description" placeholder="Enter Description..." matInput (change)="validateForm()" required></textarea>
+      </mat-form-field>
+    </div>
+ 
+    <!-- Tags  -->
+    <div class="my-1" *ngIf="!isTagsValid">
+      <mat-hint>
+        Please enter atleast on tag for your survey
+      </mat-hint>
+    </div>
+    <div class = "form-group">
+      <mat-form-field  appearance="outline" class="input-full-width">
+        <mat-label>Add tags</mat-label>
+        <mat-chip-list #chipList aria-label="Tag selection">
+          <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                   [removable]="removable" (removed)="remove(tag)">
+            {{tag}}
+            <mat-icon matChipRemove *ngIf="removable">X</mat-icon>
+          </mat-chip>
+          <input placeholder="Enter tag name..."
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)" 
+                 formControlName="tags" (change)="validateForm()" required>
+        </mat-chip-list>
+      </mat-form-field>
+    </div>
+
+    <!-- Duration -->
+    <div class="my-1" *ngIf="!isDurationValid">
+      <mat-hint>
+        Please enter a valid duration for which survey will be active.
+      </mat-hint>
+    </div>
+    <div class = "form-group" >
+      <mat-form-field appearance="outline" class="input-full-width">
+        <mat-label>Duration( Input in minutes only)</mat-label>
+        <input type="number" formControlName = "duration" (change)="validateForm()" matInput placeholder="Enter Duration..." (change)="floorValue()" required>
+        <mat-hint>{{ duration + " hr " }}    {{surveyBasicDetailsForm.value.duration%60 + " min" }}</mat-hint>
+      </mat-form-field>
+    </div>
+    
+    <button mat-raised-button [disabled]="disableNextButton" class="stepper-next" (click)="passSurveyBasicDetails()" matStepperNext>Next</button>
+
+  </form>
+
+</div>
+
+ 

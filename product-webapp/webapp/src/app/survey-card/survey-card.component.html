@@ -1,0 +1,18 @@
+<mat-card class="filledSurvey">
+    <mat-card-header fxLayoutAlign="center">
+      <mat-card-title  fxLayoutAlign="center" style="text-align: center;">{{survey.surveyTitle}}</mat-card-title>
+      <mat-card-subtitle fxLayoutAlign="center">Created-On: {{formatDate(survey.createdOn)}}</mat-card-subtitle>
+    </mat-card-header>
+    <div style="display: inline-flex;" fxLayout="row" fxLayoutAlign="space-between" >
+      <div style="display: inline-flex;margin: 5px 10px 0px 5px;" [matTooltip]="audience" matTooltipPosition="above">
+        <mat-icon>supervisor_account</mat-icon><p style="padding-top: 3px; font-weight: 500;">{{(audience.length>10)? (audience | slice:0:10)+'...':(audience)}}</p>
+      </div>
+      <div style="display: inline-flex;margin: 5px 10px 0px 0px; min-width: fit-content;">
+        <mat-icon>alarm</mat-icon><p style="padding-top: 3px; font-weight: 500;">{{survey.activeTime}} mins</p>
+      </div>
+    </div>
+    <h4 [matTooltip]="description">{{ (description!=null && description.length>80 )? (description | slice:0:80)+'...':(description) }}</h4> 
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button (click)="activateSurvey()" mat-button>Activate</button>
+    </div>
+</mat-card>

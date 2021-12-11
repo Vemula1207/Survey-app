@@ -1,0 +1,11 @@
+<mat-card class="filledSurvey">
+    <mat-card-header fxLayoutAlign="center center">
+      <mat-card-title >{{survey.surveyTitle}}</mat-card-title>
+    </mat-card-header>
+    <!-- <mat-card style="min-height: fit-content;"> matTooltipClass="tooltip" -->
+        <h4 [matTooltip]="description">{{ (description.length>80)? (description | slice:0:80)+'..':(description) }}</h4>
+    <!-- </mat-card> -->
+    <div fxLayout="row" fxLayoutAlign="end center" >
+      <button mat-button (click)="fillSurvey()" fxLayoutAlign="end">Take Survey</button>
+    </div>
+</mat-card>

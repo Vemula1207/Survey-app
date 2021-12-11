@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="container p-2">
+        <mat-card class="mycard">
+            <mat-card-title [style]="uiSettings" class="bg-white">{{surveyTitle}}</mat-card-title>
+            <!-- <mat-card-subtitle class="bg-white">{{this.activeSurvey.description}}</mat-card-subtitle> -->
+            
+        </mat-card>
+    </div>
+
+</div>
+
+<form [formGroup]="form" (ngSubmit)=onSubmit()>
+
+    <div class="container p-2">
+
+        <mat-card class="crd my-4" formArrayName="something" *ngFor="let question of questions;let i = index">
+            <!-- {{addSomething()}} --> 
+            <mat-card-title [style] = "uiSettings" class="title">
+                {{i+1}}.{{question.questionBody}}
+            </mat-card-title>
+
+            <div class="options bg-white p-2" *ngIf="question.questionType === 'MCQ'">
+
+                <mat-radio-group [formControlName]="i" class="form-control bg-white">
+                    <div class="bg-white" *ngFor="let option of question.options">
+                        <mat-radio-button [style] = "uiSettings" class="bg-white options" [value]="option">
+                            {{option}}
+                        </mat-radio-button>
+                    </div>
+                </mat-radio-group>
+
+                <!-- <input type="radio" value='Female' formControlName="gender">Female -->
+            </div>
+
+            <div class="options" *ngIf="question.questionType === 'SUBJECTIVE'">
+                <textarea class=" form-control form-control bg-white border border-dark"
+                    id="exampleFormControlTextarea1" rows="3" [formControlName]="i"></textarea>
+            </div>
+
+            <div class="bg-white" *ngIf="question.questionType === 'MSQ'">
+                <div class="bg-white" *ngFor="let option of question.options">
+                    <mat-checkbox [style] = "uiSettings" class="options bg-white"  [formControlName]="i" (click) = "addmsq(question.questionId,option,question.questionBody,question.options)">
+                        {{option}}
+                    </mat-checkbox>
+                </div>
+            </div>
+
+        </mat-card>
+    </div>
+    <div class="container p-2 text-center">
+        <button mat-flat-button class="button" type="submit">Submit</button>
+    </div>
+</form>

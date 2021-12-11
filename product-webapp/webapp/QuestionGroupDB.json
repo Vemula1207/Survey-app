@@ -1,0 +1,71 @@
+{
+    "questionGroup": [
+        {
+            "groupTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare",
+                "education",
+                "healthCare",
+                "education",
+                "healthCare",
+                "education",
+                "healthCare",
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": 20210901
+        },
+        {
+            "groupId": 2,
+            "groupTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01"
+        },
+        {
+            "groupId": 1,
+            "groupTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01"
+        },
+        {
+            "groupId": 2,
+            "groupTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01"
+        },
+        {
+            "groupId": 1,
+            "groupTitle": "Customer",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01"
+        },
+        {
+            "groupId": 2,
+            "groupTitle": "Feedback",
+            "tags": [
+                "education",
+                "healthCare"
+            ],
+            "createdBy": "Mohit",
+            "createdOn": "2021/09/01"
+        }
+    ]
+}
